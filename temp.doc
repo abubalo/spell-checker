@@ -1,0 +1,20 @@
+const dictionary = {};
+
+// Populate the dictionary
+const words = ["apple", "banana", "cherry", /* ... */];
+for (const word of words) {
+  dictionary[word.toLowerCase()] = true;
+}
+
+// Check if a word is in the dictionary
+function isWordInDictionary(word) {
+  return dictionary[word.toLowerCase()] === true;
+}
+
+// Usage
+const userInput = "appel";
+if (!isWordInDictionary(userInput)) {
+  console.log("Misspelled word");
+} else {
+  console.log("Correctly spelled word");
+}
