@@ -1,6 +1,10 @@
 import fs from "fs";
 
-export default class SpellChecker {
+interface ReadFile{
+  spellCheckFile(filePath: string): void;
+}
+
+export default class SpellChecker implements ReadFile {
     private wordFrequency: Map<string, number>;
   
     constructor(referenceCorpus: string[]) {
@@ -64,7 +68,7 @@ export default class SpellChecker {
   
       return bestCandidate;
     }
-    
+
     spellCheckFile(filePath: string): void {
       try {
         const content = fs.readFileSync(filePath, 'utf-8');
