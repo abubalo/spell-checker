@@ -15,11 +15,14 @@ The algorithm's core idea is to calculate the probability of a given word being 
 4. **Selecting the Best Correction**: The algorithm suggests the candidate correction with the highest probability as the recommended correction for the misspelled word.
 ## Features
 
-- Efficient spell checking using Peter Norvig's algorithm
+- Efficient spell-checking using Peter Norvig's algorithm
 - Generates suggestions for misspelled words
 - Customizable reference corpus for improved accuracy
 - Simple and educational TypeScript codebase
 
+## Future Enhancements
+
+- ****
 ## Getting Started
 
 1. Clone the repository:
@@ -45,8 +48,9 @@ yarn start
 After running the project, provide a misspelled word as input.
 The spell checker will suggest a correction based on the reference corpus.
 The corrected word will be displayed in the console.
-Customization
-Adjust the referenceCorpus array in index.ts to use your own sentences. A larger and diverse reference corpus leads to better suggestions.
+
+## Customization
+Adjust the referenceCorpus array in index.ts to use your own sentences. A larger and more diverse reference corpus leads to better suggestions.
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
