@@ -54,6 +54,47 @@ export default class SpellChecker implements ReadFile {
     return dp[m][n];
   }
 
+  generateCandidates(inputWord: string): string[] {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    const candidates: string[] = [];
+  
+    // Generate candidates by changing one character at a time
+    for (let i = 0; i < inputWord.length; i++) {
+      for (let j = 0; j < alphabet.length; j++) {
+        const char = alphabet[j];
+        const candidate = inputWord.slice(0, i) + char + inputWord.slice(i + 1);
+        candidates.push(candidate);
+      }
+    }
+  
+    // Generate candidates by adding a character at the beginning or end
+    for (let i = 0; i <= inputWord.length; i++) {
+      for (let j = 0; j < alphabet.length; j++) {
+        const char = alphabet[j];
+        const candidate = inputWord.slice(0, i) + char + inputWord.slice(i);
+        candidates.push(candidate);
+      }
+    }
+  
+    // Generate candidates by removing a character
+    for (let i = 0; i < inputWord.length; i++) {
+      const candidate = inputWord.slice(0, i) + inputWord.slice(i + 1);
+      candidates.push(candidate);
+    }
+  
+    // Generate candidates by transposing adjacent characters
+    for (let i = 0; i < inputWord.length - 1; i++) {
+      const candidate =
+        inputWord.slice(0, i) +
+        inputWord[i + 1] +
+        inputWord[i] +
+        inputWord.slice(i + 2);
+      candidates.push(candidate);
+    }
+  
+    return candidates;
+  }
+  
   suggestCorrections(inputWord: string): string[] {
     const candidates = this.generateCandidates(inputWord);
     const bestCandidates: string[] = [];
