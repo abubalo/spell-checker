@@ -1,8 +1,5 @@
 # TypeScript Spell Checker
 
-This project implements Peter Norvig's well-known statistical spell-checking algorithm using TypeScript. The algorithm leverages probability-based language models to provide accurate suggestions for correcting misspelled words. By analyzing a reference corpus of text, the algorithm identifies potential corrections that are more likely to be correct in the given context.
-
-## How the Algorithm Works
 
 This spell-checking algorithm is based on the Levenshtein distance (edit distance) algorithm, which calculates the similarity between two words by measuring the number of single-character edits required to transform one word into another. The steps include:
 
